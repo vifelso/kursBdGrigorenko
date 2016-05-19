@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.ActionTransportController">
+   <children>
+      <Button fx:id="addTransport" layoutX="67.0" layoutY="327.0" mnemonicParsing="false" onAction="#add" text="add" />
+      <Button fx:id="cancel" layoutX="484.0" layoutY="327.0" mnemonicParsing="false" onAction="#cancel" text="cancel" />
+      <Label layoutX="16.0" layoutY="41.0" prefHeight="32.0" prefWidth="103.0" text="name of transport" />
+      <TextField fx:id="nameOfTransport" layoutX="178.0" layoutY="45.0" prefHeight="25.0" prefWidth="375.0" />
+      <Button fx:id="editTransport" layoutX="282.0" layoutY="327.0" mnemonicParsing="false" onAction="#editTransport" text="edit" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="SQL Server - tur_firma@localhost" uuid="e8ca82fb-dbbd-4b12-a586-f6ddfa50767e">
+    <database-info product="Microsoft SQL Server" version="12.00.2000" jdbc-version="4.0" driver-name="Microsoft JDBC Driver 4.0 for SQL Server" driver-version="4.0.2206.100">
+      <extra-name-characters>$#@</extra-name-characters>
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="dbo" catalog="tur_firma"/>
+    <table name="clients" schema="dbo" catalog="tur_firma" type="TABLE">
+      <column name="id" sqlType="int identity" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="full_name" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="passport_data" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PK__clients__3213E83F87B09E68" columns="id"/>
+      <exported-key name="FK_438nqo9h5xp2cbqrp495gy24f" table="touristvouchers" schema="dbo" catalog="tur_firma" columns="id_client"/>
+    </table>
+    <table name="countries" schema="dbo" catalog="tur_firma" type="TABLE">
+      <column name="id" sqlType="int identity" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="country_name" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="lvl_security" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PK__countrie__3213E83FA9D2818F" columns="id"/>
+      <exported-key name="FK_ce5axntx8ne5w6uqis6myp3qv" table="hotels" schema="dbo" catalog="tur_firma" columns="id_country"/>
+    </table>
+    <table name="drivers" schema="dbo" catalog="tur_firma" type="TABLE">
+      <column name="id" sqlType="int identity" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="adress" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="full_name" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="id_transport" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="phone" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PK__drivers__3213E83F70952079" columns="id"/>
+      <foreign-key name="FK_jb20r4nhviwmepwh0lre69j05" columns="id_transport" ref-table="transport" ref-schema="dbo" ref-catalog="tur_firma" ref-columns="id" update-rule="1" delete-rule="1" deferrability="2"/>
+      <exported-key name="FK_pj7m78pf5rhtn66ulh5y6rj8y" table="touristvouchers" schema="dbo" catalog="tur_firma" columns="id_driver"/>
+    </table>
+    <table name="employers" schema="dbo" catalog="tur_firma" type="TABLE">
+      <column name="id" sqlType="int identity" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="full_name" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="phone" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="position" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PK__employer__3213E83FB9391AED" columns="id"/>
+      <exported-key name="FK_rewg028uh22fcmlga9myj4e0i" table="touristvouchers" schema="dbo" catalog="tur_firma" columns="id_employer"/>
+    </table>
+    <table name="hotels" schema="dbo" catalog="tur_firma" type="TABLE">
+      <column name="id" sqlType="int identity" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="adress" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="hotel_name" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="id_country" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="phone" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PK__hotels__3213E83FCED7BE4D" columns="id"/>
+      <foreign-key name="FK_ce5axntx8ne5w6uqis6myp3qv" columns="id_country" ref-table="countries" ref-schema="dbo" ref-catalog="tur_firma" ref-columns="id" update-rule="1" delete-rule="1" deferrability="2"/>
+      <exported-key name="FK_cefo3oerf0cp7hhk8of5gcvkp" table="touristvouchers" schema="dbo" catalog="tur_firma" columns="id_hotel"/>
+    </table>
+    <table name="insurance" schema="dbo" catalog="tur_firma" type="TABLE">
+      <column name="id" sqlType="int identity" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="cost" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_touristvoucher" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="insurance_date" sqlType="datetime" precision="23" scale="3" nullable="true" jdbcType="93"/>
+      <primary-key name="PK__insuranc__3213E83FFBDAAB5C" columns="id"/>
+      <foreign-key name="FK_4x94f81esgjlw94ly4k39pihp" columns="id_touristvoucher" ref-table="touristvouchers" ref-schema="dbo" ref-catalog="tur_firma" ref-columns="id" update-rule="1" delete-rule="1" deferrability="2"/>
+    </table>
+    <table name="sysdiagrams" schema="dbo" catalog="tur_firma" type="TABLE">
+      <column name="name" sqlType="sysname" precision="128" scale="0" nullable="false" jdbcType="-9"/>
+      <column name="principal_id" sqlType="int" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="diagram_id" sqlType="int identity" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="version" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="definition" sqlType="varbinary" precision="2147483647" scale="0" nullable="true" jdbcType="-3"/>
+      <primary-key name="PK__sysdiagr__C2B05B61572C386F" columns="diagram_id"/>
+      <index name="UK_principal_name" unique="true" columns="principal_id,name"/>
+    </table>
+    <table name="touristvouchers" schema="dbo" catalog="tur_firma" type="TABLE">
+      <column name="id" sqlType="int identity" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="arrival_date" sqlType="datetime" precision="23" scale="3" nullable="true" jdbcType="93"/>
+      <column name="cost" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="departure_date" sqlType="datetime" precision="23" scale="3" nullable="true" jdbcType="93"/>
+      <column name="id_client" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_driver" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_employer" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id_hotel" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="sale_date" sqlType="datetime" precision="23" scale="3" nullable="true" jdbcType="93"/>
+      <primary-key name="PK__touristv__3213E83F7F363FA5" columns="id"/>
+      <foreign-key name="FK_438nqo9h5xp2cbqrp495gy24f" columns="id_client" ref-table="clients" ref-schema="dbo" ref-catalog="tur_firma" ref-columns="id" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FK_pj7m78pf5rhtn66ulh5y6rj8y" columns="id_driver" ref-table="drivers" ref-schema="dbo" ref-catalog="tur_firma" ref-columns="id" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FK_rewg028uh22fcmlga9myj4e0i" columns="id_employer" ref-table="employers" ref-schema="dbo" ref-catalog="tur_firma" ref-columns="id" update-rule="1" delete-rule="1" deferrability="2"/>
+      <foreign-key name="FK_cefo3oerf0cp7hhk8of5gcvkp" columns="id_hotel" ref-table="hotels" ref-schema="dbo" ref-catalog="tur_firma" ref-columns="id" update-rule="1" delete-rule="1" deferrability="2"/>
+      <exported-key name="FK_4x94f81esgjlw94ly4k39pihp" table="insurance" schema="dbo" catalog="tur_firma" columns="id_touristvoucher"/>
+    </table>
+    <table name="transport" schema="dbo" catalog="tur_firma" type="TABLE">
+      <column name="id" sqlType="int identity" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PK__transpor__3213E83FD0F0CB6A" columns="id"/>
+      <exported-key name="FK_jb20r4nhviwmepwh0lre69j05" table="drivers" schema="dbo" catalog="tur_firma" columns="id_transport"/>
+    </table>
+    <procedure name="fn_diagramobjects" schema="dbo" catalog="tur_firma" type="2">
+      <prototype>
+        <parameter name="@RETURN_VALUE" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="sp_alterdiagram" schema="dbo" catalog="tur_firma" type="2">
+      <prototype>
+        <parameter name="@diagramname" sqlType="sysname" precision="256" scale="0" nullable="true" jdbcType="-9" type="1" index="1"/>
+        <parameter name="@owner_id" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4" type="1" index="2"/>
+        <parameter name="@version" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4" type="1" index="3"/>
+        <parameter name="@definition" sqlType="varbinary" precision="2147483647" scale="0" nullable="true" jdbcType="-3" type="1" index="4"/>
+        <parameter name="@RETURN_VALUE" sqlType="int" precision="10" scale="0" nullable="false" jdbcType="4" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="sp_creatediagram" schema="dbo" catalog="tur_firma" type="2">
+      <prototype>
+        <parameter name="@diagramname" sqlType="sysname" precision="256" scale="0" nullable="true" jdbcType="-9" type="1" index="1"/>
+        <parameter name="@owner_id" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4" type="1" index="2"/>
+        <parameter name="@version" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4" type="1" index="3"/>
+        <parameter name="@definition" sqlType="varbinary" precision="2147483647" scale="0" nullable="true" jdbcType="-3" type="1" index="4"/>
+        <parameter name="@RETURN_VALUE" sqlType="int" precision="10" scale="0" nullable="false" jdbcType="4" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="sp_dropdiagram" schema="dbo" catalog="tur_firma" type="2">
+      <prototype>
+        <parameter name="@diagramname" sqlType="sysname" precision="256" scale="0" nullable="true" jdbcType="-9" type="1" index="1"/>
+        <parameter name="@owner_id" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4" type="1" index="2"/>
+        <parameter name="@RETURN_VALUE" sqlType="int" precision="10" scale="0" nullable="false" jdbcType="4" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="sp_helpdiagramdefinition" schema="dbo" catalog="tur_firma" type="2">
+      <prototype>
+        <parameter name="@diagramname" sqlType="sysname" precision="256" scale="0" nullable="true" jdbcType="-9" type="1" index="1"/>
+        <parameter name="@owner_id" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4" type="1" index="2"/>
+        <parameter name="@RETURN_VALUE" sqlType="int" precision="10" scale="0" nullable="false" jdbcType="4" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="sp_helpdiagrams" schema="dbo" catalog="tur_firma" type="2">
+      <prototype>
+        <parameter name="@diagramname" sqlType="sysname" precision="256" scale="0" nullable="true" jdbcType="-9" type="1" index="1"/>
+        <parameter name="@owner_id" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4" type="1" index="2"/>
+        <parameter name="@RETURN_VALUE" sqlType="int" precision="10" scale="0" nullable="false" jdbcType="4" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="sp_renamediagram" schema="dbo" catalog="tur_firma" type="2">
+      <prototype>
+        <parameter name="@diagramname" sqlType="sysname" precision="256" scale="0" nullable="true" jdbcType="-9" type="1" index="1"/>
+        <parameter name="@owner_id" sqlType="int" precision="10" scale="0" nullable="true" jdbcType="4" type="1" index="2"/>
+        <parameter name="@new_diagramname" sqlType="sysname" precision="256" scale="0" nullable="true" jdbcType="-9" type="1" index="3"/>
+        <parameter name="@RETURN_VALUE" sqlType="int" precision="10" scale="0" nullable="false" jdbcType="4" type="5" index="0"/>
+      </prototype>
+    </procedure>
+    <procedure name="sp_upgraddiagrams" schema="dbo" catalog="tur_firma" type="2">
+      <prototype>
+        <parameter name="@RETURN_VALUE" sqlType="int" precision="10" scale="0" nullable="false" jdbcType="4" type="5" index="0"/>
+      </prototype>
+    </procedure>
+  </data-source>
+</component>

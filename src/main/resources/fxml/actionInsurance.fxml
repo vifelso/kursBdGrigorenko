@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.ActionInsuranceController">
+   <children>
+      <Label layoutX="20.0" layoutY="40.0" prefHeight="17.0" prefWidth="120.0" text="id of Touristvoucher" />
+      <Label layoutX="20.0" layoutY="85.0" prefHeight="17.0" prefWidth="120.0" text="insurance's date" />
+      <Label layoutX="20.0" layoutY="135.0" prefHeight="17.0" prefWidth="120.0" text="cost" />
+      <TextField fx:id="idOfTouristVoucher" layoutX="163.0" layoutY="36.0" prefHeight="25.0" prefWidth="406.0" />
+      <TextField fx:id="insuranceDate" layoutX="163.0" layoutY="81.0" prefHeight="25.0" prefWidth="406.0" />
+      <TextField fx:id="cost" layoutX="163.0" layoutY="131.0" prefHeight="25.0" prefWidth="406.0" />
+      <Button fx:id="add" layoutX="34.0" layoutY="334.0" mnemonicParsing="false" onAction="#add" text="add" />
+      <Button fx:id="cancel" layoutX="492.0" layoutY="334.0" mnemonicParsing="false" onAction="#cancel" text="cancel" />
+      <Button fx:id="editInsurance" layoutX="274.0" layoutY="334.0" mnemonicParsing="false" onAction="#editInsurance" text="edit" />
+   </children>
+</AnchorPane>

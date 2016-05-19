@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.MainController">
+   <children>
+       <SplitPane layoutX="41.0" layoutY="21.0" orientation="VERTICAL" prefHeight="379.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="21.0">
+          <items>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="368.0" prefWidth="698.0">
+                 <children>
+                     <SplitPane dividerPositions="0.7969798657718121" layoutX="321.0" layoutY="9.0" prefHeight="352.0" prefWidth="698.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="9.0">
+                        <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                               <children>
+                                   <TableView fx:id="myTable" editable="true" layoutX="65.0" layoutY="14.0" prefHeight="366.0" prefWidth="472.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columns>
+
+                        </columns>
+                                 <contextMenu>
+                                    <ContextMenu>
+                                      <items>
+                                        <MenuItem fx:id="addBtnContext" mnemonicParsing="false" onAction="#addBtnContext" text="add" />
+                                          <MenuItem fx:id="editBtnContext" mnemonicParsing="false" onAction="#editBtnContex" text="edit" />
+                                          <MenuItem fx:id="deleteBtnContext" mnemonicParsing="false" onAction="#deleteBtnContext" text="delete" />
+                                      </items>
+                                    </ContextMenu>
+                                 </contextMenu>
+                                   </TableView>
+                               </children>
+                            </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <ListView fx:id="showTable" layoutX="-5.0" layoutY="29.0" onMouseClicked="#selectShowListTable" prefHeight="168.0" prefWidth="149.0" />
+                              <Label layoutX="9.0" layoutY="6.0" prefHeight="17.0" prefWidth="120.0" text="click and choose table" />
+                              <Label layoutX="6.0" layoutY="197.0" prefHeight="17.0" prefWidth="101.0" text="advanced query" />
+                              <ListView fx:id="advancedQuery" layoutY="242.0" onMouseClicked="#advancedQuery" prefHeight="125.0" prefWidth="149.0" />
+                              <Label layoutX="3.0" layoutY="214.0" prefHeight="17.0" prefWidth="101.0" text="click and choose " />
+                           </children>
+                            </AnchorPane>
+                        </items>
+                     </SplitPane>
+                 </children>
+              </AnchorPane>
+          </items>
+       </SplitPane>
+      <MenuBar layoutX="186.0" layoutY="2.0" prefHeight="28.0" prefWidth="700.0" AnchorPane.bottomAnchor="372.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="About">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#madeAndrei" text="Autor" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
